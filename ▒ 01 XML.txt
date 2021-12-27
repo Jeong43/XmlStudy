@@ -1,0 +1,75 @@
+■■■ XML(eXtensibe Markup Language) ■■■
+
+○ 개요
+   마크업이란 문서 내용 이외에 문서 구조를 정의하거나 표현하기 위해 정의한
+   부가적인 정보라 할 수 있으며, 마크업의 표현은 각 어플리케이션에서 정의한
+   고유한 방식으로 이루어진다.
+   즉, 문서 편집기마다 마크업을 표현하는 방법이 서로 다르다는 의미이다.
+
+@ 비교한 표 등은 눈여겨서 봐두기!
+
+ajrieje
+84
+2454634574
+↓
+<name>ajrieje</name>
+<age>84</age>
+<tel>2454634574</tel>
+
+@ XML 을 사용하는 이유
+① 데이터의 구조적 표현
+② 자유로운 표현 → HTML은 제한되어 있음. (ex. <h59>, <Z> ...)
+③ 구조화 표현이기 때문에... 플랫폼을 가리지 않음. (ex. 음악-작곡, 금융-대차대조표...)
+
+@ 다른 문서 표현 방식(ex. 제이슨 등...)도 모두 xml 을 기반으로 만들어짐
+@ xml 은 보수적인 포맷
+
+@ 1.1.4 well-formed XML Document 와 valid XML Document
+well-formed XML Document 는 root 엘리먼트를 필요로 한다.
+
+@ well-formed 가 아니여도 장치를 통해 활용할 수 있으나,
+장치가 well-formed 에 적합하게 만들어졌으므로... 삐걱삐걱 가동된다!
+
+※ well-formed XML Document (X)
+<name>ajrieje</name>
+<age>84</age>
+<tel>2454634574</tel>
+↓
+※ well-formed XML Document (O)
+<person>
+	<name>ajrieje</name>
+	<age>84</age>
+	<tel>2454634574</tel>
+</person>
+
+
+※ well-formed XML Document (X)
+<person>
+	<name>ajrieje</name>
+	<age>84</age>
+	<tel>2454634574</tel>
+</person>
+<person>
+	<name>ajrieje</name>
+	<age>84</age>
+	<tel>2454634574</tel>
+</person>
+↓
+※ well-formed XML Document (O)
+<people>
+<person>
+	<name>ajrieje</name>
+	<age>84</age>
+	<tel>2454634574</tel>
+</person>
+<person>
+	<name>ajrieje</name>
+	<age>84</age>
+	<tel>2454634574</tel>
+</person>
+</people>
+
+
+※ 2.4.1 DTD
+dtd 엘리먼트 이름과 xml 루트 엘리먼트의 이름이 같아야 하는 규칙이 있음. (cf. 자바...)
+엠티일 경우 boolean 
